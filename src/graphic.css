@@ -1,0 +1,9 @@
+.graphic-row {
+	margin-top: 20px;
+}
+
+
+.line-chart {
+	background-color: white;
+	box-shadow: 2px 2px 2px rgba(0.1,0.1,0.2,0.2);
+}

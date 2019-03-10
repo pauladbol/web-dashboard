@@ -1,0 +1,9 @@
+.rce-avatar-container {
+    border-radius: 100%;
+}
+
+.rce-avatar-container .rce-avatar {
+    width: 50 !important;
+    height: 50 !important;
+
+}
