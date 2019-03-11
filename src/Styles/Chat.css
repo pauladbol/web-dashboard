@@ -1,0 +1,49 @@
+.chat-row {
+	margin-top: 2%;
+	margin-right: 0% !important;
+	padding-bottom: 2%;
+}
+
+.chat-col {
+	background-color: white;
+	padding-left: 2% !important;
+	padding-right: 2% !important;
+	padding-top: 2% !important;
+}
+
+.chat-icon {
+    font-size: 30px;
+    margin: auto;
+}
+
+.chat-messages {
+	overflow: auto;
+	height: 300px;
+}
+
+.rce-citem {
+	height: 90px !important;
+}
+
+.rce-avatar-container.large {
+	width: 60px !important;
+    height: 60px !important;
+}
+
+.avatar-left .rce-citem-avatar {
+	order: 0;
+}
+
+.avatar-right .rce-citem-avatar {
+	order: 2;
+
+}
+
+.rce-citem:hover {
+	background-color: white !important;
+}
+
+.rce-citem-body--bottom-title, .rce-citem-body--top-title {
+	white-space: unset !important;
+	padding: 0.5%;
+}

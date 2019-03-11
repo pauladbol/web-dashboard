@@ -1,0 +1,48 @@
+.icon {
+    color: white;
+    font-size: 30px;
+    margin: auto;
+}
+
+.widget-icon {
+    padding: 5%;
+    text-align: center;
+}
+
+.order {
+	background-color: #2EA6FC;
+}
+
+.comment {
+	background-color: #FFB33D;
+}
+
+.user {
+	background-color: #19C2AD;
+}
+
+.view {
+	background-color: #F2293C;
+}
+
+.widget-row {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	background-color: white;
+
+}
+
+.widget-col {
+	padding-left: 0% !important;
+	margin-top: 1%;
+}
+
+.widget-value {
+	font-size: 20px;
+}
+
+.widget-description {
+	font-size: 12px;
+	color: gray;
+}
+
