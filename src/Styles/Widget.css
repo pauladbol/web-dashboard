@@ -46,3 +46,10 @@
 	color: gray;
 }
 
+@media only screen and (max-width: 600px) {
+  	.widget-value, .widget-description {
+		text-align: center;
+	}
+}
+
+

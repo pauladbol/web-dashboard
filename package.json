@@ -12,7 +12,6 @@
     "react-bootstrap": "^1.0.0-beta.5",
     "react-chat-elements": "^10.3.0",
     "react-dom": "^16.8.4",
-    "react-responsive-container": "0.0.0",
     "react-scripts": "2.1.8",
     "recharts": "^1.5.0"
   },

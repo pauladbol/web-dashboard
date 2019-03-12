@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import '../Styles/Chat.css';
 import { Row, Col } from 'react-bootstrap';
 import 'react-chat-elements/dist/main.css';
@@ -7,6 +6,7 @@ import { Input, Button, ChatItem } from 'react-chat-elements'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
+import { getApplicationResponse, postMessages } from '../Services/ApplicationService';
 
 library.add(faComments)
 
@@ -18,19 +18,15 @@ class Chat extends Component {
 	}
 
   	componentDidMount() {
-    	axios.get('http://dev.4all.com:3050/messages')
-      		.then(res => {
-        	const chatMessages = res.data;
-        	this.setState({ chatMessages });
-      	})
-
+  		getApplicationResponse('messages').then(res => {
+            const chatMessages = res.data;
+            this.setState({ chatMessages });
+        })
   	}
  	
  	handleSubmit = event => {
 	    event.preventDefault();
-	    console.log(this.refs.input.state.value);
-	    console.log();
-	    console.log();
+
 	    const message = {
 	    	userName: "Eu",
         	portrait: "http://dev.4all.com:3050/imgs/profile1.jpg",
@@ -39,14 +35,10 @@ class Chat extends Component {
         	time: "1 min ago"
 	    };
 
-	    axios.post('http://dev.4all.com:3050/messages', { message })
-	      .then(res => {
-	        console.log(res);
-	        console.log(message);
-	        this.setState({chatMessages:[...this.state.chatMessages, message]});
+	    postMessages('messages', { message } ).then(res => {
+            this.setState({chatMessages:[...this.state.chatMessages, message]});
 	        this.refs.input.clear();
-	    })
-	    
+        })
 	}
 
   	render() {
@@ -66,7 +58,7 @@ class Chat extends Component {
 	                	<Col lg={12} md={12} sm={12}>
 	                		{this.state.chatMessages.map((message, index) =>
 		                		<ChatItem avatar={message.portrait} avatarFlexible={true} className={message.displayPortraitLeft? 'avatar-left' : 'avatar-right'}
-		                					title={message.userName} subtitle={message.message} dateString={message.time} key={index}/>)}
+		                					title={message.userName} subtitle={message.message} dateString={message.time} key={index} />)}
 	                	</Col>
 	                </Row>
 	                <Row>

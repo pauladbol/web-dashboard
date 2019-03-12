@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import '../Styles/Graphic.css';
 import { Row, Col } from 'react-bootstrap';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { getApplicationResponse} from '../Services/ApplicationService';
 
 class Graphic extends Component {
 	state = {
@@ -10,11 +10,10 @@ class Graphic extends Component {
 	}
 
   	componentDidMount() {
-    	axios.get('http://dev.4all.com:3050/pageViews')
-      		.then(res => {
-        	const graphic = res.data;
-        	this.setState({ graphic });
-      	})
+  		getApplicationResponse('pageViews').then(res => {
+            const graphic = res.data;
+            this.setState({ graphic });
+        })
   	}
 
   	render() {

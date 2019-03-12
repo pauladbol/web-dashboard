@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import '../Styles/Widget.css';
 import WidgetItem from './WidgetItem.js';
 import { Row } from 'react-bootstrap';
+import { getApplicationResponse} from '../Services/ApplicationService';
 
 class Widget extends Component {
 	state = {
@@ -10,12 +10,10 @@ class Widget extends Component {
 	}
 
   	componentDidMount() {
-    	axios.get('http://dev.4all.com:3050/widgets')
-      		.then(res => {
-        	const widgets = res.data;
-        	this.setState({ widgets });
-      	})
-
+        getApplicationResponse('widgets').then(res => {
+                const widgets = res.data;
+                this.setState({ widgets });
+        })
   	}
 
   	render() {

@@ -7,6 +7,7 @@ import Chat from './Components/Chat';
 
 class App extends Component {
   render() {
+    document.title = 'Dashboard';
     return (
       <div className="App">
         <Container>
